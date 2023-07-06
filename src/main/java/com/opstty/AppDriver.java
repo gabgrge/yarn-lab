@@ -1,9 +1,6 @@
 package com.opstty;
 
-import com.opstty.job.TreeKindCountJob;
-import com.opstty.job.WordCount;
-import com.opstty.job.SpeciesJob;
-import com.opstty.job.DistrictsContainingTrees;
+import com.opstty.job.*;
 import org.apache.hadoop.util.ProgramDriver;
 
 public class AppDriver {
@@ -23,6 +20,9 @@ public class AppDriver {
 
             programDriver.addClass("treekind", TreeKindCountJob.class,
                     "A map/reduce program that calculates the number of trees of each kind.");
+
+            programDriver.addClass("maximumheight", MaximumHeightJob.class,
+                    "A map/reduce program that calculates the height of the tallest tree of each kind.");
 
             exitCode = programDriver.run(argv);
         } catch (Throwable throwable) {
